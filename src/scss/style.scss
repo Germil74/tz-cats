@@ -1,0 +1,322 @@
+@import url(../font/TrebuchetMS/stylesheet.css);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  min-width: 360px;
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+                  180deg,
+                  rgba(0, 0, 0, 0.9) 0%,
+                  rgba(0, 0, 0, 5e-5) 49.88%,
+                  rgba(0, 0, 0, 0.9) 100%
+  ),
+  url(../img/Pattern@2x.svg);
+}
+.container {
+  max-width: 1280px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.block {
+  width: 100%;
+}
+.block__title {
+  color: #ffffff;
+  font-family: 'Exo 2';
+  text-shadow: 0px 1px 1px #000000;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
+  font-weight: 100;
+  margin-bottom: 20px;
+}
+.block__products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.block__product-wrap {
+  width: 33.3%;
+  display: flex;
+  justify-content: center;
+  /* outline: 1px solid #0f0; */
+  min-width: 360px;
+}
+.product {
+  /* outline: 1px solid rgb(255, 0, 119); */
+  width: 320px;
+  height: 509px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.product__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 21px 16px 16px 48px;
+  width: 320px;
+  height: 480px;
+  font-family: 'Trebuchet MS';
+  background: #f2f2f2;
+  border: 4px solid #1698d9;
+  border-radius: 12px;
+  background: #fff url(../img/cat.png) left 0px bottom -2px no-repeat;
+  clip-path: polygon(
+                  0% 8.5%,
+                  13% 0%,
+                  100% 0%,
+                  100% 0%,
+                  100.32% 100%,
+                  87.81% 100.21%,
+                  0% 100%,
+                  0% 100%
+  );
+  transition: border-color 0.3s ease-in-out;
+}
+.product__card:hover {
+  border: 4px solid #2ea8e6;
+}
+.product.selected .product__card {
+  border: 4px solid #d91667;
+}
+.product.selected .product__card:hover {
+  border: 4px solid #e52e7a;
+}
+
+.product.disabled .product__card {
+  color: #b3b3b3;
+  border: 4px solid #b3b3b3;
+  mix-blend-mode: normal;
+  opacity: 0.6;
+}
+
+.product__card::before {
+  position: absolute;
+  content: '';
+  width: 42px;
+  height: 4px;
+  background: #1698d9;
+  width: 58px;
+  left: -12px;
+  top: 17px;
+  transform: rotate(-45deg);
+  transition: background-color 0.3s ease-in-out;
+}
+.product.disabled .product__card-substrate {
+  border-radius: 12px;
+  background: #fff;
+  clip-path: polygon(
+                  0% 8.5%,
+                  13% 0%,
+                  100% 0%,
+                  100% 0%,
+                  100.32% 100%,
+                  87.81% 100.21%,
+                  0% 100%,
+                  0% 100%
+  );
+}
+
+.product__card:hover::before {
+  background: #2ea8e6;
+}
+
+.product.selected .product__card::before {
+  background: #d91667;
+}
+.product.selected .product__card:hover::before {
+  background: #e52e7a;
+}
+
+.product.selected .product__card::before {
+  background: #d91667;
+}
+
+.product.disabled .product__card::before {
+  background: #b3b3b3;
+}
+
+.product__description {
+  color: #666666;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 5px;
+  transition: color 0.3s ease-in-out;
+}
+.product.selected .product__card:hover .product__description {
+  color: #e62e7a;
+}
+.product.disabled .product__description {
+  color: #b3b3b3;
+}
+.product__title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+  color: #000000;
+}
+.product.disabled .product__title {
+  color: #b3b3b3;
+}
+.product__subtitle {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+  margin-bottom: 15px;
+}
+.product.disabled .product__subtitle {
+  color: #b3b3b3;
+}
+.product__features {
+  list-style: none;
+}
+.product__feature {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: #666666;
+}
+
+.product.disabled .product__feature {
+  color: #b3b3b3;
+}
+.product__wiegth {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  margin-left: auto;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #1698d9;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.product__card:hover .product__wiegth {
+  background: #2ea8e6;
+}
+
+.product.selected .product__card .product__wiegth {
+  background: #d91667;
+}
+
+.product.selected .product__card:hover .product__wiegth {
+  background: #e52e7a;
+}
+
+.product.disabled .product__wiegth {
+  background: #b3b3b3;
+}
+
+.product__wiegth-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.product__wiegth-number {
+  display: flex;
+  align-items: flex-end;
+  color: #ffffff;
+  font-size: 42px;
+  line-height: 23px;
+  letter-spacing: -0.024em;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.product__wiegth-string {
+  position: relative;
+  top: 8px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 22px;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+.product__footer {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Trebuchet MS';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #ffffff;
+}
+.product__footer-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  text-align: center;
+  color: #ffffff;
+}
+.product.disabled .product__footer-text {
+  color: #ffff66;
+}
+.product__footer-action {
+  position: relative;
+  color: #1698d9;
+  margin-left: 3px;
+  text-decoration: none;
+}
+.product__footer-action::after {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed #1698d9;
+  content: '';
+  bottom: 0;
+  left: 0;
+}
+
+@media (max-width: 540px) {
+}
+
+@media (max-width: 1080px) {
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  .container {
+    padding: 40px 20px;
+  }
+}
