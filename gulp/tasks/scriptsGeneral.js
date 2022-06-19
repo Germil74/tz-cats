@@ -40,7 +40,7 @@ module.exports = function() {
     $.gulp.task('scripts:build', () => {
         return $.gulp.src("./src/main.js")
           .pipe($.gp.debug({title: 'js:'}))
-          .pipe($.gp.webpack({
+          .pipe($.webpack({
               mode: 'production',
               output: {
                   filename: 'script.js'

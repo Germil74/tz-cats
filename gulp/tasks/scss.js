@@ -19,7 +19,7 @@ module.exports = () => {
     });
     $.gulp.task('scss:build', () => {
         return $.gulp.src('./src/scss/main.scss')
-            .pipe($.gp.sass())
+            .pipe($.sass())
             .on("error", $.gp.notify.onError({
                 title: "Ошибка в стилях"
             }))
@@ -29,7 +29,7 @@ module.exports = () => {
             .pipe($.gp.groupCssMediaQueries())
             .pipe($.gp.csscomb())
            .pipe($.gp.csso())
-            .pipe($.gulp.dest('./build/css/'));
+            .pipe($.gulp.dest('./public/css/'));
 
     });
 };

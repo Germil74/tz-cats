@@ -3,7 +3,10 @@ export const block = {
   "products": [
     {
       "id": 1,
-      "description": "Сказочное заморское яство",
+      "description": {
+        "default": "Сказочное заморское яство",
+        "selectedHover": "Котэ не одобряет?"
+      },
       "title": "Нямушка",
       "subtitle": "с фуа-гра",
       "features": [
@@ -16,17 +19,21 @@ export const block = {
       },
       "footer": {
         "default": {
-          "text": "Чего сидишь? Порадуй котэ,&nbsp;",
+          "text": "Чего сидишь? Порадуй котэ, ",
           "action": "купи."
         },
         "selected": "Печень утки разварная с артишоками.",
         "disabled": "Печалька, с фуа-гра закончился."
       },
-      "missing": false
+      "missing": false,
+      "selected": false,
     },
     {
       "id": 2,
-      "description": "Сказочное заморское яство",
+      "description": {
+        "default": "Сказочное заморское яство",
+        "selectedHover": "Котэ не одобряет?"
+      },
       "title": "Нямушка",
       "subtitle": "с рыбой",
       "features": [
@@ -39,17 +46,21 @@ export const block = {
       },
       "footer": {
         "default": {
-          "text": "Чего сидишь? Порадуй котэ,&nbsp;",
+          "text": "Чего сидишь? Порадуй котэ, ",
           "action": "купи."
         },
         "selected": "Головы щучьи с чесноком да свежайшая сёмгушка.",
         "disabled": "Печалька, с рыбой закончился."
       },
-      "missing": false
+      "missing": false,
+      "selected": true,
     },
     {
       "id": 3,
-      "description": "Сказочное заморское яство",
+      "description": {
+        "default": "Сказочное заморское яство",
+        "selectedHover": "Котэ не одобряет?"
+      },
       "title": "Нямушка",
       "subtitle": "с курой",
       "features": [
@@ -63,13 +74,14 @@ export const block = {
       },
       "footer": {
         "default": {
-          "text": "Чего сидишь? Порадуй котэ,&nbsp;",
+          "text": "Чего сидишь? Порадуй котэ, ",
           "action": "купи."
         },
         "selected": "Филе из цыплят с трюфелями в бульоне.",
         "disabled": "Печалька, с курой закончился."
       },
-      "missing": true
+      "missing": true,
+      "selected": false,
     }
   ]
 }
